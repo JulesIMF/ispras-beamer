@@ -1,0 +1,72 @@
+\mode<presentation>
+
+\usepackage[export]{adjustbox}
+\usepackage{etoolbox}
+
+\def\maketitle{%
+    {
+    \setbeamercolor{background canvas}{bg=VKblue}
+    \frame[plain,noframenumbering]{
+        \begin{minipage}[b][\paperheight]{\textwidth}
+            \vspace{0.06cm}
+            \begin{figure}
+                \hspace*{0.86cm}
+                \includegraphics[width=0.45\linewidth, right]{sty/White.png}
+            \end{figure}
+            
+            \vspace{1.4cm}
+
+            \begin{center}
+                \usebeamerfont{title}\usebeamercolor[fg]{title}\textbf{\inserttitle} \\
+                $ $ \\
+            \end{center}
+
+            \begin{flushright}
+                \usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor.
+                \usebeamerfont{author}\usebeamercolor[fg]{author}\insertdate
+            \end{flushright}
+
+            \ifcsdef{supervisor}{
+
+            \vspace{0.0cm}
+            \begin{flushright}
+                \usebeamerfont{author}\usebeamercolor[fg]{author}Научный руководитель: \supervisor
+            \end{flushright}
+            }{}
+
+            \ifcsdef{consultant}{
+            \vspace{-0.5cm}
+            \begin{flushright}
+                \usebeamerfont{author}\usebeamercolor[fg]{author}Научный консультант: \consultant
+            \end{flushright}
+            }{}
+            
+            \vfill
+            \vspace*{1mm}
+        \end{minipage}
+        
+    }
+    }
+}
+
+\setbeamertemplate{endpage}{%
+    {
+    \setbeamercolor{background canvas}{bg=VKblue}
+    \frame[plain,noframenumbering]{
+        \vspace{-1.55cm}
+        \begin{figure}
+            \hspace*{0.86cm}
+            \includegraphics[width=0.45\linewidth, right]{sty/White.png}
+        \end{figure}
+        
+        \vspace{3cm}
+        \usebeamerfont{title}\usebeamercolor[fg]{title} \textbf{Вопросы?} \\
+        \usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor
+        \vfill
+        \vspace*{1mm}
+    }
+    }
+}
+
+\mode
+<all>
